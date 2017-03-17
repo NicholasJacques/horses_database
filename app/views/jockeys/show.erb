@@ -1,0 +1,15 @@
+<p>
+  <a href="/">Home</a>  
+  <a href="/horses">Horses</a>  
+  <a href="/jockeys">Jockeys</a>
+<p>
+
+<h1><%= @jockey.name %></h1>
+<h3>Total Winnings: $<%= @jockey.sum_winnings  %><br>
+    Average Winnings: $<%= @jockey.average_winnings %></h3>
+
+<% @jockey.horses.each do |horse| %>
+  <strong>Horse: <%= horse.name %></strong><br>
+     Breed: <%= horse.breed.name %>
+  </p>
+<%end%>

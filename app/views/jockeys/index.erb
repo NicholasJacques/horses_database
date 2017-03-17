@@ -1,0 +1,15 @@
+<p>
+  <a href="/">Home</a>  
+  <a href="/horses">Horses</a>  
+  <a href="/jockeys">Jockeys</a>
+<p>
+
+<h1>Jockeys:</h1>
+
+<% Jockey.all.each do |jockey| %>
+  <h2><a href="/jockeys/<%= jockey.id %>"><%= jockey.name %></a></h2>
+  <strong>Horses:</strong><br>
+  <% jockey.horses.each do |horse| %>
+    <%= horse.name %> <br>
+  <% end %>
+<% end %>

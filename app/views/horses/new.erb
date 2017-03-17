@@ -1,0 +1,24 @@
+<p>
+  <a href="/">Home</a>  
+  <a href="/horses">Horses</a>  
+  <a href="/jockeys">Jockeys</a>
+<p>
+
+<form action="/horses" method="post">
+  <p>Create a New Horse</p>
+  Name: <input type='text' name='horse[name]'/><br/>
+  Age: <input type='text' name='horse[age]'/><br/>
+  Total Winnings: <input type='text' name='horse[total_winnings]'/><br/>
+  Jockey: <select name='horse[jockey_id]'>
+    <% @jockeys.each do |jockey| %>
+      <option value=<%= jockey.id %>><%= jockey.name %></option>
+    <% end %>
+  </select>
+  <br>
+  Breed: <select name="horse[breed_id]">
+    <% @breeds.each do |breed| %>
+      <option value=<%= breed.id %>><%= breed.name %></option>
+    <% end %>
+  </select><br>
+  <input type="submit" value="Create New Horse" />
+</form>

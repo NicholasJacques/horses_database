@@ -1,7 +1,13 @@
+<p>
+  <a href="/">Home</a>  
+  <a href="/horses">Horses</a>  
+  <a href="/jockeys">Jockeys</a>
+<p>
+
 <h1>Horses</h1>
 
 <% @horses.each do |horse| %>
-  <h3><%= horse.name %></h3>
+  <h3><a href="/horses/<%= horse.id %>"><%= horse.name %></a></h3>
   <p>
     Jockey: <%= horse.jockey.name %></br>
     Breed: <%= horse.breed.name %><br>
